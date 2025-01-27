@@ -12,7 +12,7 @@ public class DocentePorHora : Empleado
         this.horasTrabajadas = horasTrabajadas;
         rol = "Docente por Hora";
     }
-    public override double CalcularSalario() =>horasTrabajadas * PagoPorHora;
+    public override decimal CalcularSalario() =>horasTrabajadas * PagoPorHora;
     
 
     public override void MostrarDatos()

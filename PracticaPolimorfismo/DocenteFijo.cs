@@ -3,10 +3,10 @@
 public class DocenteFijo : Empleado
 {
     private const string rol = "Docente Fijo";
-    public double salario { get; private set; }
+    public decimal salario { get; private set; }
     public int horasTrabajada { get; private set; }
     
-    public DocenteFijo(int IdEmpleado, string nombre, string apellido, double salario, int horasTrabajada) :
+    public DocenteFijo(int IdEmpleado, string nombre, string apellido, decimal salario, int horasTrabajada) :
         base(IdEmpleado, nombre, apellido)
     {
         this.horasTrabajada = horasTrabajada;
@@ -22,10 +22,6 @@ public class DocenteFijo : Empleado
         Console.WriteLine($"Salario de este mes: {CalcularSalario()}");
     }
 
-    public override double CalcularSalario()
-    {
-        return horasTrabajada >= HorasMinimas    
-            ? salario 
-            : salario / 2;
-    }
+    public override decimal CalcularSalario()  => horasTrabajada >= HorasMinimas ? salario : salario / 2;
+
 }

@@ -16,7 +16,7 @@ public abstract class Empleado
         this.apellido = apellido;
     }
 
-    public abstract double CalcularSalario();
+    public abstract decimal CalcularSalario();
 
     public virtual void MostrarDatos()
     {

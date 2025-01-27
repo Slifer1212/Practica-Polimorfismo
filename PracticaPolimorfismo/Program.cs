@@ -6,12 +6,16 @@ namespace PracticaPolimorfismo
     {
         public static void Main(string[] args)
         {
-            DocenteFijo docente1 = new DocenteFijo(01, "Juan" , "Soto", 2500,8);
-            DocentePorHora docentePorHora = new DocentePorHora(02, "Maria", "Perez", 10);
-            EmpleadoAdministrativo empleadoAdministrativo = new EmpleadoAdministrativo(03, "Pedro", "Gomez", 2000);
-            docentePorHora.MostrarDatos();
-            docente1.MostrarDatos();
-            empleadoAdministrativo.MostrarDatos();
+            Empleado[] empleados = new Empleado[3];
+            empleados[0] = new DocenteFijo(1, "Juan", "Perez", 10000, 160);
+            empleados[1] = new DocentePorHora(2, "Maria", "Martinez", 160);
+            empleados[2] = new EmpleadoAdministrativo(3, "Pedro", "Gomez", 8000);
+
+            foreach (var empleado in empleados)
+            {
+                empleado.MostrarDatos();
+                Console.WriteLine();
+            }
         }
     }
 }
